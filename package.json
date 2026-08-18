@@ -1,1 +1,44 @@
-{"name":"capitalia-fintech","private":true,"version":"1.0.0","type":"module","scripts":{"dev":"vite","build":"tsc -b && vite build","lint":"tsc --noEmit","preview":"vite preview --host 0.0.0.0"},"dependencies":{"@vitejs/plugin-react":"latest","vite":"latest","typescript":"latest","react":"latest","react-dom":"latest","lucide-react":"^0.468.0","recharts":"^2.15.0"},"devDependencies":{"@types/react":"latest","@types/react-dom":"latest"}}
+{
+  "name": "capitalia-fintech",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "dev:api": "tsx watch server/index.ts",
+    "start:api": "tsx server/index.ts",
+    "build": "tsc -b && vite build",
+    "lint": "tsc --noEmit && tsc --noEmit -p server/tsconfig.json",
+    "test": "tsx --test server/**/*.test.ts",
+    "audit": "npm audit --audit-level=high",
+    "verify": "npm run lint && npm run test && npm run build && npm run audit",
+    "preview": "vite preview --host 0.0.0.0"
+  },
+  "dependencies": {
+    "@vitejs/plugin-react": "latest",
+    "bcryptjs": "^3.0.2",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.1",
+    "express": "^5.1.0",
+    "express-rate-limit": "^8.0.1",
+    "helmet": "^8.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "lucide-react": "^0.468.0",
+    "react": "latest",
+    "react-dom": "latest",
+    "recharts": "^2.15.0",
+    "typescript": "latest",
+    "vite": "latest",
+    "zod": "^4.0.17"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.3",
+    "@types/jsonwebtoken": "^9.0.10",
+    "@types/react": "latest",
+    "@types/react-dom": "latest",
+    "@types/supertest": "^6.0.3",
+    "supertest": "^7.1.4",
+    "tsx": "^4.20.4"
+  }
+}
